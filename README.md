@@ -48,3 +48,35 @@ LANGUAGE_CODE = 'ko-kr'
 
 TIME_ZONE = 'Asia/Seoul'
 ```
+
+
+
+---
+
+#### DB 연결
+
+##### mysqlclient 설치
+
+```py
+pip install mysqlclient
+```
+
+
+
+> HOST가 가장 중요한데, 로컬에서 컨테이너에 연결할 때는 localhost, 
+>
+> 컨테이너간 연결할 때는 컨테이너 이름 또는 127.0.0.1을 사용하면 된다.
+
+```python
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "testdb",
+        "USER": "root",
+        "PASSWORD": "jyk",
+        "HOST": "localhost",
+        "PORT": "3306",
+    }
+}
+```
+
